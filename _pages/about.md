@@ -1,28 +1,19 @@
 ---
 layout: page
-title: About
+title: Обо мне
 ---
 
-Sidey is a simple and minimalistic jekyll blogging theme.
+Привет! Меня зовут Андрей, я backend .NET разработчик. Я люблю делать записи, когда изучаю что-то новое или пытаюсь формализовать уже имеющиеся знания или опыт. Данный сайт нужен для того, чтобы хранить все мои записи в одном месте.
+Вполне возможно, что они пригодятся кому-то еще, т.к. они могут быть полезны для разработчиков самого разного уровня.
 
-### Features
+### О чем я пишу
 
-- Responsive design
-- Inline CSS
-- Anchor headings
-- Search
-- Tags & tag pages
-- Security headers (for Netlify hosting)
-- 404 page
-- Compressed CSS and HTML
-- 100/100 score on Lighthouse, Page Speed Insights & Webpagetest
-- Robots.txt
-- Atom & Json feeds
-- Sass
-- Seo optimized (Twitter cards, Facebook Open Graph, Schema.org)
-- Ultra fast (Only ~5kb of CSS)
-- Sidebar navigation
+Я пишу о том, с чем сталкиваюсь сам и что мне интересно. Вы можете найти здесь самые различные записи:
 
-### Screenshot
+- Общие сведения и описания
+- Выдержки из гайдлайнов и хорошие практики
+- Паттерны и антипаттерны
 
-![Screenshot](screenshot.png)
+### О сайте
+
+Сайт сделан на основе чудесной минималистичной [Jekyll-темы Sidey](https://github.com/ronv/sidey) и хостится на [Netlify](https://netlify.com/). Репозиторий с данным сайтом доступен [на моем GitHub](https://github.com/AndreiSozontov/blog) 
