@@ -31,6 +31,7 @@
   <style>
     {% capture include_to_scssify %}
       {% include inline.scss %}
+      {% include prism.scss %}
     {% endcapture %}
     {{ include_to_scssify | scssify }}
   </style>
