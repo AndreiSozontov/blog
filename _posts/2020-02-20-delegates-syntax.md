@@ -113,7 +113,7 @@ class Program
 **Проблема 3** Все еще надо объявлять тип делегата, т.е. писать `private delegate void Message();`
 
 **Решение**
-Начиная с .NET Framework 3.5 это можно не делать, т.к. были добавлены добавлены:
+Начиная с .NET Framework 3.5 это можно не делать, т.к. были добавлены:
 
 **Action** - для void методов, которые не возвращают ничего. Могут иметь или не иметь входные параметры.
 ```csharp
@@ -121,10 +121,10 @@ Action msg2 = () => Console.WriteLine("Hello, World2!");
 Action<string> msg3 = (name) => Console.WriteLine($"Hello, {name}!");
 ```
 
-**Func** - для не void методов. `Func<int x, int y, string result>` принимает на вход 2 int аргумента и в ответ возвращает string.
+**Func** - для не-void методов. Имеет ряд перегруженных версий по входным параметрам. Например, `Func<int x, int y, string result>` принимает на вход 2 int аргумента и в ответ возвращает string.
 ```csharp
-Func<int,int,string> func = (х, у) => (х * у).ToString();`
-string result = func(2, 3);
+Func<int,int,string> myfunc = (х, у) => (х * у).ToString();`
+string result = myfunc(2, 3);
 ```
 
 **Predicate**
