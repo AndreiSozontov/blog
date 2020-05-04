@@ -28,10 +28,15 @@ public class PaymentServiceException : Exception
 
     public PaymentServiceException(string message) : base(message) {}
 
+    public PaymentServiceException(string message, int paymentId) : base(message)
+    {
+        PaymentId = paymentId;
+    }
+
     public PaymentServiceException(string message, Exception innerException) : base(message, innerException) {}
 
     // Конструктор, который нужен для корректной сериализации, если ваш сервис передает исключение за свои пределы.
-    public PaymentServiceException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+    public PaymentServiceException(SerializationInfo info, StreamingContext context) : base(info, context) {}
 }
 ```
 
@@ -43,8 +48,9 @@ public class PaymentServiceException : Exception
 
 Я впервые столкнулся с этим и узнал про это, когда смотрел отчет SonarQube о сервисе, над которым трудилась моя команда. SonarQube ставил ошибки в наших класса-исключениях, не поддерживающих сериализацию.
 
-Исключения (абсолютно все!) должны нормально сериализоваться, и точка. Более того для этого от вас требуется всего-ничего добавить только 2 строчки кода: аттрибут и конструктор, т.е. код абсолютно не усложняется.
+Исключения (абсолютно все!) по-умолчанию должны иметь возможность выйти за пределы текущей сборки нормально, т.е. они должны сериализоваться, и точка. Более того для этого от вас требуется всего-ничего добавить только 2 строчки кода: аттрибут и конструктор, т.е. код абсолютно не усложняется, т.к. это не те 2 строчки кода, в которые ты вчитываешься и пытаешься понять, что они делают и какую логику в себе содержат.
 
+Если этого недостаточно, то заглянем в исходники в базовый класс `System.Exception`:
 ```csharp
 [ClassInterface(ClassInterfaceType.None)]
 [ComDefaultInterface(typeof(_Exception))]
@@ -56,7 +62,7 @@ public class Exception : ISerializable, _Exception
 }
 ```
 
-Что нам скажет **Liskov Substitution Principle** о ситуации, когда базовый класс поддерживает сериализацию, а прямой наследник не поддерживает?
+Что нам скажет **Liskov Substitution Principle** о ситуации, когда базовый класс поддерживает сериализацию, а его прямой наследник не поддерживает?
 
 **Кастомные свойства и переопределения.**
 
