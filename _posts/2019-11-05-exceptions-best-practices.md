@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Exceptions - стратегия обработки исключений
+title: Exceptions. Стратегия обработки исключений
 description: Что такое исключения, best-practices по обработке исключений
 summary: Что такое исключения, best-practices по обработке исключений
 comments: true
@@ -28,7 +28,7 @@ tags: [csharp, best_practices]
 - **Не** генерируйте общие исключения _Exception_, _SystemException_, _ApplicationException_
 - **Не** генерируйте зарезервированные платформой исключения NullReferenceException, IndexOutOfRangeException,  AccessViolationException, OutOfMemoryException
 - Можно генерировать _ArgumentException_, _ArgumentNullException_, _ArgumentOutOfRangeException_, указывайте в конструкторе имя аргумента.
-- Можно генерировать _InvalidOperationException_ если объект в неподходящем состоянии 
+- Можно генерировать _InvalidOperationException_, если объект в неподходящем состоянии 
 
 # Возможные вопросы
 

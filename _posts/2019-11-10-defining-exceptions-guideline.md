@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Exceptions - гайдлайн по созданию
+title: Exceptions. Определение своего класса-исключения
 description: Как правильно определить класс-исключение
 summary: Как правильно определить класс-исключение
 comments: true
@@ -36,7 +36,7 @@ public class PaymentServiceException : Exception
     public PaymentServiceException(string message, Exception innerException) : base(message, innerException) {}
 
     // Конструктор, который нужен для корректной сериализации, если ваш сервис передает исключение за свои пределы.
-    public PaymentServiceException(SerializationInfo info, StreamingContext context) : base(info, context) {}
+    protected PaymentServiceException(SerializationInfo info, StreamingContext context) : base(info, context) {}
 }
 ```
 
