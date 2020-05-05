@@ -4,7 +4,7 @@ title: Exceptions. Как не надо делать
 description: Exceptions. Anti-patterns
 summary: Exceptions. Anti-patterns
 comments: true
-tags: [csharp, antipatterns&pitfalls]
+tags: [csharp, anti-patterns&pitfalls]
 ---
 
 _страница в работе_
